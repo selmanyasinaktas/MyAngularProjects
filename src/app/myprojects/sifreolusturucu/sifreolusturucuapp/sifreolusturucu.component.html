@@ -1,0 +1,72 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Şifre Oluşturucu</h1>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Şifre Uzunluğu</label>
+      <input
+        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        (change)="modifyLength($event)" 
+        type="number"
+        placeholder="Uzunluğu girin"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="inline-flex items-center text-gray-700 font-medium">
+        <input
+          class="form-checkbox text-blue-500"
+          (change)="modifyLetters()"
+          type="checkbox"
+        />
+        <span class="ml-2">Alfabeyi Kullan</span>
+      </label>
+    </div>
+
+    <div class="mb-4">
+      <label class="inline-flex items-center text-gray-700 font-medium">
+        <input
+          class="form-checkbox text-blue-500"
+          (change)="modifyNumbers()"
+          type="checkbox"
+        />
+        <span class="ml-2">Sayıları Kullan</span>
+      </label>
+    </div>
+
+    <div class="mb-4">
+      <label class="inline-flex items-center text-gray-700 font-medium">
+        <input
+          class="form-checkbox text-blue-500"
+          (change)="modifySymbols()"
+          type="checkbox"
+        />
+        <span class="ml-2">Sembolleri Kullan</span>
+      </label>
+    </div>
+
+    <button
+      [disabled]="!(length && (includeLetters || includeSymbols || includeNumbers))"
+      (click)="createClick()"
+      class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors duration-200 my-2"
+    >
+      Oluştur
+    </button>
+    <button
+      [disabled]="!(length && (includeLetters || includeSymbols || includeNumbers))"
+      (click)="cleanClick()"
+      class="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 transition-colors duration-200 my-2"
+    >
+      Temizle
+    </button>
+
+    <div class="mt-6" *ngIf="password != null">
+      <label class="block text-gray-700 font-medium mb-2">Şifreniz</label>
+      <input
+        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        [value]="password"
+        readonly
+      />
+    </div>
+  </div>
+</div>

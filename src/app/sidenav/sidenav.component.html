@@ -1,0 +1,26 @@
+<mat-sidenav-container hasBackdrop="true" class="!h-full">
+    <mat-sidenav #sidenav mode="push" class="!w-2/3 md:!w-1/3 lg:!w-1/4 xl:!w-1/6 2xl:!w-2/12">
+      <p class="!h-[64px]"></p>
+     
+      <div class="row-auto p-4">
+     
+
+        <div class="flex flex-col p-2">
+
+          <input value="PasswordCreator" type="button" routerLink="/passwordcreator" class="cursor-pointer block w-full text-sm text-slate-500 py-2 mr-4 my-2 px-4 rounded-full border-0 text-sm font-semibold bg-violet-50  text-violet-700 hover: bg-violet-100" (click)="sidenav.close()"/>
+
+          <input value="LetterMatching" type="button" routerLink="/lettermatching" class="cursor-pointer block w-full text-sm text-slate-500 py-2 mr-4 my-2 px-4 rounded-full border-0 text-sm font-semibold bg-violet-50  text-violet-700 hover: bg-violet-100" (click)="sidenav.close()"/>
+
+          <input value="Login" type="button" routerLink="/login"  class="cursor-pointer block w-full text-sm text-slate-500 mr-4 my-2 py-2 px-4 rounded-full border-0 text-sm font-semibold bg-violet-50  text-violet-700 hover: bg-violet-100" (click)="sidenav.close()"/>
+
+          <input value="Card" type="button" routerLink="/card"  class="cursor-pointer block w-full text-sm text-slate-500 mr-4 py-2 my-2 px-4 rounded-full border-0 text-sm font-semibold bg-violet-50  text-violet-700 hover: bg-violet-100" (click)="sidenav.close()" />
+ 
+        </div>
+       
+      </div>
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
